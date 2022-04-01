@@ -31,6 +31,8 @@ def demangle_swift(bv):
         bv.functions[i].name = demangled
         i = i + 1
 
+    bv.update_analysis_and_wait()
+
 class DemangleSwiftFunctions(BackgroundTaskThread):
     def __init__(self, msg, bv):
         BackgroundTaskThread.__init__(self, msg, True)
